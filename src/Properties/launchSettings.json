@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "zlock": {
+      "commandName": "Project",
+      "commandLineArgs": "-v -w 5 process.lock ping -t 0.0.0.0"
+    }
+  }
+}
