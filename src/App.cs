@@ -121,6 +121,14 @@ OPTIONS
     --time-limit <secs>
                              limit execution time
 
+    -k
+    --keep
+                             don't delete lock file
+
+    -q
+    --quiet
+                             don't print anything
+
 AUTHORS
 
     Filip Golewski
@@ -159,6 +167,16 @@ AUTHORS
                         case "-v":
                         case "--verbose":
                             options.Verbose = true;
+                            break;
+
+                        case "-k":
+                        case "--keep":
+                            options.Keep = true;
+                            break;
+
+                        case "-q":
+                        case "--quiet":
+                            options.Quiet = true;
                             break;
 
                         case "-n":

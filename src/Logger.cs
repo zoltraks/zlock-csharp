@@ -13,6 +13,10 @@ namespace ZLock
 
         public void Write(Exception x)
         {
+            if (Options.Quiet)
+            {
+                return;
+            }
             if (Options.Verbose)
             {
                 DateTime now = DateTime.Now;

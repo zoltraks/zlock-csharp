@@ -205,6 +205,10 @@ namespace ZLock
                 try
                 {
                     _LockFileStream.Dispose();
+                    if (!Options.Keep)
+                    {
+                        File.Delete(Options.LockFile);
+                    }
                 }
                 catch (Exception _Exception)
                 {

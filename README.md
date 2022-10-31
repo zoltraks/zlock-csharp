@@ -56,6 +56,14 @@ OPTIONS
     --time-limit <secs>
                              limit execution time
 
+    -k
+    --keep
+                             don't delete lock file
+
+    -q
+    --quiet
+                             don't print anything
+
 AUTHORS
 
     Filip Golewski
@@ -83,4 +91,27 @@ Be verbose.
 
 ```
 zlock -v -w 5 one.lock ping -t 0.0.0.0
+```
+
+Compilation
+-----------
+
+In case you need to compile without support for legacy .NET 2.0 change configuration in csproj file by removing ``net20``.
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+
+    <TargetFrameworks>net40;netcoreapp3.1;net20</TargetFrameworks>
+```
+
+```xml
+    <TargetFrameworks>net40;netcoreapp3.1</TargetFrameworks>
+```
+
+For recent Linux distribution use netcoreapp6.0.
+
+```xml
+    <TargetFrameworks>netcoreapp6.0</TargetFrameworks>
 ```

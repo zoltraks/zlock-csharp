@@ -5,21 +5,23 @@ namespace ZLock
 {
     public class Options
     {
-        public bool Verbose;
-        public bool NonBlock;
-        public int WaitTime;
-        public int LockExitCode;
-        public int TimeLimit;
-
         public IList<string> CommandLine = new List<string>();
 
         public string FileName { get => CommandLine.Count == 0 ? "" : CommandLine[0]; }
         public string Arguments { get => GetArguments(); }
+
+        public bool Verbose { get; internal set; }
+        public bool NonBlock { get; internal set; }
+        public int WaitTime { get; internal set; }
+        public int LockExitCode { get; internal set; }
+        public int TimeLimit { get; internal set; }
         public string LockFile { get; internal set; }
         public bool PrintHelp { get; internal set; }
         public bool PrintVersion { get; internal set; }
         public int LimitExitCode { get; internal set; }
         public bool Kill { get; internal set; }
+        public bool Keep { get; internal set; }
+        public bool Quiet { get; internal set; }
 
         private string GetArguments()
         {
